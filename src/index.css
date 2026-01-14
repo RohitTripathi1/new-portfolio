@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Dark theme (default) */
+  html[data-theme="dark"],
+  html:not([data-theme]) {
+    --bg-primary: #1e1e1e;
+    --bg-editor: #252526;
+    --border-color: #3e3e42;
+    --text-primary: #d4d4d4;
+    --text-secondary: #858585;
+    --keyword: #569cd6;
+    --function: #dcdcaa;
+    --string: #ce9178;
+    --variable: #9cdcfe;
+    --comment: #6a9955;
+    --number: #b5cea8;
+    --button-bg: #0e639c;
+    --button-hover: #1177bb;
+    --card-bg: #252526;
+    --accent: #264f78;
+  }
+  
+  /* Light theme */
+  html[data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-editor: #f8f8f8;
+    --border-color: #e8e8e8;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --keyword: #0000ff;
+    --function: #795e26;
+    --string: #a31515;
+    --variable: #001080;
+    --comment: #008000;
+    --number: #098658;
+    --button-bg: #007acc;
+    --button-hover: #005a9e;
+    --card-bg: #f8f8f8;
+    --accent: #cce8ff;
+  }
+  
+  body {
+    @apply text-gray-200;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  p, span, div, a, li, td, th {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Custom cursor styling - only hide default cursor on desktop */
+  @media (hover: hover) and (pointer: fine) {
+    html,
+    * {
+      cursor: none !important;
+    }
+    
+    input,
+    textarea {
+      cursor: text !important;
+    }
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-extrabold mb-12 text-center;
+    color: var(--keyword);
+    letter-spacing: -0.03em;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    transition: color 0.3s ease;
+  }
+  
+  .section-title::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px;
+    width: 60px;
+    height: 2px;
+    background: var(--keyword);
+    border-radius: 1px;
+    transition: background 0.3s ease;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--keyword);
+    border-radius: 1px;
+    transition: background 0.3s ease;
+  }
+  
+  .section-title-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0 40px;
+  }
+  
+  .section-title-wrapper::before,
+  .section-title-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 1px;
+    background: rgba(59, 130, 246, 0.3);
+  }
+  
+  .section-title-wrapper::before {
+    left: 0;
+  }
+  
+  .section-title-wrapper::after {
+    right: 0;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    border-color: var(--keyword);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 3D Button Styles - VS Code Theme */
+  .btn-3d-primary {
+    position: relative;
+    padding: 0.875rem 2rem;
+    background: var(--button-bg);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--button-hover);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-3d-primary:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 8px 12px -2px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-3d-primary:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 
+      0 2px 4px -1px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-3d-secondary {
+    position: relative;
+    padding: 0.875rem 2rem;
+    background: transparent;
+    color: var(--keyword);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--keyword);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-3d-secondary:hover {
+    background: var(--accent);
+    border-color: var(--keyword);
+    color: var(--keyword);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 8px 12px -2px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-3d-secondary:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 
+      0 2px 4px -1px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-3d-accent {
+    position: relative;
+    padding: 0.875rem 2rem;
+    background: var(--accent);
+    color: var(--variable);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--keyword);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .btn-3d-accent:hover {
+    background: var(--button-bg);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      0 8px 12px -2px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-3d-accent:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow: 
+      0 2px 4px -1px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Enhanced Text Styles */
+  .text-elegant {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-code {
+    font-family: 'JetBrains Mono', monospace;
+    color: #dcdcaa; /* VS Code function color */
+    font-weight: 500;
+  }
+  
+  .text-accent {
+    color: #569cd6; /* VS Code keyword color */
+    font-weight: 600;
+  }
+  
+  .text-keyword {
+    color: var(--keyword);
+  }
+  
+  .text-string {
+    color: var(--string);
+  }
+  
+  .text-function {
+    color: var(--function);
+  }
+  
+  .text-variable {
+    color: var(--variable);
+  }
+  
+  .text-comment {
+    color: var(--comment);
+  }
+  
+  .text-number {
+    color: var(--number);
+  }
+  
+  .decorative-line {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .decorative-line::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 12px;
+    height: 1px;
+    background: rgba(59, 130, 246, 0.4);
+  }
+  
+  .decorative-line::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 12px;
+    height: 1px;
+    background: rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotateX(90deg) rotateY(90deg);
+  }
+  50% {
+    transform: translateY(-40px) rotateX(180deg) rotateY(180deg);
+  }
+  75% {
+    transform: translateY(-20px) rotateX(270deg) rotateY(270deg);
+  }
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(50px, -100px) scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes code-float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-float-3d {
+  animation: float-3d 8s ease-in-out infinite;
+}
+
+.animate-float-3d-delay {
+  animation: float-3d 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-3d-delay-2 {
+  animation: float-3d 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.animate-float-particle {
+  animation: float-particle 15s ease-in-out infinite;
+}
+
+.animate-code-float {
+  animation: code-float 20s linear infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-editor);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
