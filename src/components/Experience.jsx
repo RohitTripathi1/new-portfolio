@@ -59,44 +59,44 @@ const Experience = () => {
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="card hover:border-l-4 hover:border-blue-500 transition-all duration-300">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <FaBriefcase style={{ color: '#569cd6' }} />
-                    <h3 className="text-2xl font-semibold" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                    <FaBriefcase className="text-base sm:text-lg" style={{ color: '#569cd6' }} />
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold break-words" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
                       <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#9cdcfe' }}>Position</span> <span style={{ color: '#dcdcaa' }}>{exp.title.replace(/\s+/g, '')}</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
                     </h3>
                   </div>
-                  <div className="flex items-center font-semibold mb-2" style={{ fontWeight: 600, color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
+                  <div className="flex items-center font-semibold mb-2 text-sm sm:text-base break-words" style={{ fontWeight: 600, color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
                     <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#9cdcfe' }}>String</span> <span style={{ color: '#dcdcaa' }}>company</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{exp.company}"</span><span style={{ color: '#d4d4d4' }}>;</span>
                   </div>
-                  <div className="flex flex-wrap items-center gap-4 mb-4" style={{ fontWeight: 400, color: '#858585', fontFamily: "'JetBrains Mono', monospace" }}>
-                    <div className="flex items-center">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4 text-xs sm:text-sm" style={{ fontWeight: 400, color: '#858585', fontFamily: "'JetBrains Mono', monospace" }}>
+                    <div className="flex items-center break-words">
                       <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#9cdcfe' }}>String</span> <span style={{ color: '#dcdcaa' }}>location</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{exp.location}"</span><span style={{ color: '#d4d4d4' }}>;</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center break-words">
                       <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#9cdcfe' }}>String</span> <span style={{ color: '#dcdcaa' }}>period</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{exp.period}"</span><span style={{ color: '#d4d4d4' }}>;</span>
                     </div>
-                    <span className="px-3 py-1 rounded text-sm font-semibold" style={{ background: '#264f78', border: '1px solid #3e3e42', color: '#9cdcfe', fontFamily: "'JetBrains Mono', monospace" }}>
+                    <span className="px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-semibold" style={{ background: '#264f78', border: '1px solid #3e3e42', color: '#9cdcfe', fontFamily: "'JetBrains Mono', monospace" }}>
                       <span style={{ color: '#569cd6' }}>Type</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{exp.type}"</span>
                     </span>
                   </div>
                 </div>
               </div>
 
-              <p className="mb-4 leading-relaxed" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
+              <p className="mb-4 leading-relaxed text-sm sm:text-base" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
                 <span style={{ color: '#6a9955' }}>// </span>{exp.description}
               </p>
 
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-8 h-px" style={{ background: '#569cd6' }}></div>
-                  <h4 className="font-semibold mb-2" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
+                  <div className="w-6 sm:w-8 h-px" style={{ background: '#569cd6' }}></div>
+                  <h4 className="font-semibold mb-2 text-sm sm:text-base" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
                     <span style={{ color: '#569cd6' }}>public void</span> <span style={{ color: '#dcdcaa' }}>responsibilities</span><span style={{ color: '#d4d4d4' }}>()</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
                   </h4>
                   <div className="flex-1 h-px" style={{ background: '#569cd6' }}></div>
                 </div>
-                <ul className="list-none space-y-1" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
+                <ul className="list-none space-y-1 text-xs sm:text-sm md:text-base" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
                   {exp.responsibilities.map((resp, idx) => (
                     <li key={idx}>
                       <span style={{ color: '#6a9955' }}>  // </span><span style={{ color: '#ce9178' }}>"{resp}"</span><span style={{ color: '#d4d4d4' }}>;</span>
@@ -118,7 +118,7 @@ const Experience = () => {
                   {exp.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded text-sm font-medium transition-colors"
+                      className="px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium transition-colors break-words"
                       style={{ background: '#2d2d30', border: '1px solid #3e3e42', color: '#9cdcfe' }}
                       onMouseEnter={(e) => e.target.style.borderColor = '#569cd6'}
                       onMouseLeave={(e) => e.target.style.borderColor = '#3e3e42'}

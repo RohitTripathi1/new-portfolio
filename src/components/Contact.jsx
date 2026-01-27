@@ -98,11 +98,11 @@ const Contact = () => {
           <div>
             <div className="relative mb-6">
               <div className="absolute -left-4 top-0 w-1 h-full" style={{ background: '#569cd6' }}></div>
-              <h3 className="text-3xl font-semibold mb-6" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 break-words" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
                 <span style={{ color: '#569cd6' }}>public class</span> <span style={{ color: '#dcdcaa' }}>Contact</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
               </h3>
             </div>
-            <p className="mb-8 text-lg leading-relaxed" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
+            <p className="mb-8 text-sm sm:text-base md:text-lg leading-relaxed" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
               <span style={{ color: '#6a9955' }}>// </span>
               <span style={{ color: '#ce9178' }}>"Always open to discussing opportunities"</span><span style={{ color: '#d4d4d4' }}>;</span><br />
               <span style={{ color: '#6a9955' }}>// </span>
@@ -111,18 +111,18 @@ const Contact = () => {
 
             <div className="space-y-6 mb-8" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl" style={{ background: '#264f78', border: '1px solid #3e3e42', color: '#569cd6' }}>
+                <div key={index} className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center text-xl sm:text-2xl flex-shrink-0" style={{ background: '#264f78', border: '1px solid #3e3e42', color: '#569cd6' }}>
                     {info.icon}
                   </div>
-                  <div>
-                    <div className="text-sm" style={{ color: '#858585' }}>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs sm:text-sm" style={{ color: '#858585' }}>
                       <span style={{ color: '#569cd6' }}>private</span> <span style={{ color: '#9cdcfe' }}>String</span> <span style={{ color: '#dcdcaa' }}>{info.label.toLowerCase()}</span><span style={{ color: '#d4d4d4' }}>;</span>
                     </div>
                     {info.link ? (
                       <a
                         href={info.link}
-                        className="font-semibold transition-colors"
+                        className="font-semibold transition-colors text-sm sm:text-base break-words"
                         style={{ color: '#9cdcfe' }}
                         onMouseEnter={(e) => e.target.style.color = '#569cd6'}
                         onMouseLeave={(e) => e.target.style.color = '#9cdcfe'}
@@ -130,7 +130,7 @@ const Contact = () => {
                         <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{info.value}"</span><span style={{ color: '#d4d4d4' }}>;</span>
                       </a>
                     ) : (
-                      <div className="font-semibold" style={{ color: '#9cdcfe' }}>
+                      <div className="font-semibold text-sm sm:text-base break-words" style={{ color: '#9cdcfe' }}>
                         <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#ce9178' }}>"{info.value}"</span><span style={{ color: '#d4d4d4' }}>;</span>
                       </div>
                     )}
@@ -139,12 +139,12 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3 sm:gap-4">
               <a
                 href="https://www.linkedin.com/in/rohit-tripathi-3a048a21b/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-xl sm:text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin />
@@ -153,7 +153,7 @@ const Contact = () => {
                 href="https://github.com/RohitTripathi1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-xl sm:text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub />
@@ -162,7 +162,7 @@ const Contact = () => {
                 href="https://leetcode.com/u/rohit_3001/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-2xl hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-xl sm:text-2xl hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
                 style={{ color: '#FFA116' }}
                 aria-label="LeetCode"
               >
@@ -170,7 +170,7 @@ const Contact = () => {
               </a>
               <a
                 href="mailto:businessrohit70@gmail.com"
-                className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
+                className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center text-xl sm:text-2xl text-blue-400 hover:bg-blue-500/30 hover:border-blue-400 transition-colors"
                 aria-label="Email"
               >
                 <HiMail />
@@ -182,13 +182,13 @@ const Contact = () => {
           <div style={{ background: '#252526', backdropFilter: 'blur(8px)', border: '1px solid #3e3e42', borderRadius: '0.5rem', padding: '2rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3)' }}>
             <div className="relative mb-6">
               <div className="absolute -left-4 top-0 w-1 h-full" style={{ background: '#569cd6' }}></div>
-              <h3 className="text-2xl font-semibold mb-6" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 break-words" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
                 <span style={{ color: '#569cd6' }}>public void</span> <span style={{ color: '#dcdcaa' }}>sendMessage</span><span style={{ color: '#d4d4d4' }}>()</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
               </h3>
             </div>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
               <div>
-                <label htmlFor="name" className="block mb-2 font-medium" style={{ color: '#d4d4d4' }}>
+                <label htmlFor="name" className="block mb-2 font-medium text-sm sm:text-base" style={{ color: '#d4d4d4' }}>
                   <span style={{ color: '#569cd6' }}>String</span> <span style={{ color: '#dcdcaa' }}>name</span><span style={{ color: '#d4d4d4' }}>;</span>
                 </label>
                 <input
@@ -198,7 +198,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all text-sm sm:text-base"
                   style={{ background: '#2d2d30', border: '1px solid #3e3e42', color: '#d4d4d4' }}
                   placeholder="name = &quot;Your Name&quot;;"
                   onFocus={(e) => {
@@ -214,7 +214,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2 font-medium" style={{ color: '#d4d4d4' }}>
+                <label htmlFor="email" className="block mb-2 font-medium text-sm sm:text-base" style={{ color: '#d4d4d4' }}>
                   <span style={{ color: '#569cd6' }}>String</span> <span style={{ color: '#dcdcaa' }}>email</span><span style={{ color: '#d4d4d4' }}>;</span>
                 </label>
                 <input
@@ -224,7 +224,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border transition-all"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all text-sm sm:text-base"
                   style={{ background: '#2d2d30', border: '1px solid #3e3e42', color: '#d4d4d4' }}
                   placeholder="email = &quot;your.email@example.com&quot;;"
                   onFocus={(e) => {
@@ -240,7 +240,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-2 font-medium" style={{ color: '#d4d4d4' }}>
+                <label htmlFor="message" className="block mb-2 font-medium text-sm sm:text-base" style={{ color: '#d4d4d4' }}>
                   <span style={{ color: '#569cd6' }}>String</span> <span style={{ color: '#dcdcaa' }}>message</span><span style={{ color: '#d4d4d4' }}>;</span>
                 </label>
                 <textarea
@@ -250,7 +250,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 rounded-lg border transition-all resize-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-all resize-none text-sm sm:text-base"
                   style={{ background: '#2d2d30', border: '1px solid #3e3e42', color: '#d4d4d4' }}
                   placeholder="message = &quot;Your message here...&quot;;"
                   onFocus={(e) => {
@@ -269,8 +269,8 @@ const Contact = () => {
               {submitStatus.type && (
                 <div
                   className={`p-4 rounded-lg border ${submitStatus.type === 'success'
-                      ? 'bg-green-900/20 border-green-500/30'
-                      : 'bg-red-900/20 border-red-500/30'
+                    ? 'bg-green-900/20 border-green-500/30'
+                    : 'bg-red-900/20 border-red-500/30'
                     }`}
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
                 >

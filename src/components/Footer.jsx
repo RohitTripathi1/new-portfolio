@@ -8,19 +8,19 @@ const Footer = () => {
   return (
     <footer style={{ background: '#252526', backdropFilter: 'blur(10px)', borderTop: '1px solid #3e3e42', padding: '2rem 0' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          <div className="mb-4 md:mb-0">
-            <p className="flex items-center gap-2" style={{ color: '#d4d4d4' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          <div className="mb-4 md:mb-0 text-center md:text-left">
+            <p className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-sm sm:text-base" style={{ color: '#d4d4d4' }}>
               <span style={{ color: '#6a9955' }}>// </span>
               <span style={{ color: '#ce9178' }}>"Made with"</span> <FaHeart className="text-red-500 animate-pulse" /> <span style={{ color: '#ce9178' }}>"by Rohit Tripathi"</span><span style={{ color: '#d4d4d4' }}>;</span>
             </p>
-            <p className="text-sm mt-1" style={{ color: '#858585' }}>
+            <p className="text-xs sm:text-sm mt-1" style={{ color: '#858585' }}>
               <span style={{ color: '#6a9955' }}>// </span>
               <span style={{ color: '#ce9178' }}>"© {currentYear} All rights reserved."</span>
             </p>
           </div>
 
-          <div className="flex gap-6">
+          <div className="flex gap-4 sm:gap-6">
             <a
               href="https://github.com/RohitTripathi1"
               target="_blank"

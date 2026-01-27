@@ -167,11 +167,11 @@
   /* 3D Button Styles - VS Code Theme */
   .btn-3d-primary {
     position: relative;
-    padding: 0.875rem 2rem;
+    padding: 0.75rem 1.5rem;
     background: var(--button-bg);
     color: #ffffff;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.875rem;
     border-radius: 0.5rem;
     border: 1px solid var(--button-hover);
     cursor: pointer;
@@ -180,6 +180,13 @@
     box-shadow: 
       0 4px 6px -1px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  @media (min-width: 640px) {
+    .btn-3d-primary {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
   }
   
   .btn-3d-primary:hover {
@@ -199,11 +206,11 @@
   
   .btn-3d-secondary {
     position: relative;
-    padding: 0.875rem 2rem;
+    padding: 0.75rem 1.5rem;
     background: transparent;
     color: var(--keyword);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.875rem;
     border-radius: 0.5rem;
     border: 1px solid var(--keyword);
     cursor: pointer;
@@ -212,6 +219,13 @@
     box-shadow: 
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  @media (min-width: 640px) {
+    .btn-3d-secondary {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
   }
   
   .btn-3d-secondary:hover {
@@ -233,11 +247,11 @@
   
   .btn-3d-accent {
     position: relative;
-    padding: 0.875rem 2rem;
+    padding: 0.75rem 1.5rem;
     background: var(--accent);
     color: var(--variable);
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.875rem;
     border-radius: 0.5rem;
     border: 1px solid var(--keyword);
     cursor: pointer;
@@ -246,6 +260,13 @@
     box-shadow: 
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       inset 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  @media (min-width: 640px) {
+    .btn-3d-accent {
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+    }
   }
   
   .btn-3d-accent:hover {

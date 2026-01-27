@@ -31,44 +31,46 @@ const Hero = () => {
         <div className="text-center animate-fade-in">
           <div className="flex justify-center mb-6">
             <div className="relative">
-              <div className="w-32 h-32 rounded-full bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700/50 flex items-center justify-center shadow-2xl">
-                <HiCode className="text-6xl text-gray-400" />
+              <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700/50 flex items-center justify-center shadow-2xl">
+                <HiCode className="text-5xl sm:text-6xl text-gray-400" />
               </div>
-              <div className="absolute -top-2 -right-2 w-4 h-4 border-2 border-blue-500/50"></div>
-              <div className="absolute -bottom-2 -left-2 w-4 h-4 border-2 border-blue-500/50"></div>
+              <div className="absolute -top-2 -right-2 w-3 h-3 sm:w-4 sm:h-4 border-2 border-blue-500/50"></div>
+              <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 border-2 border-blue-500/50"></div>
             </div>
           </div>
-          
+
           <div className="relative mb-6">
-            <div className="absolute left-1/2 transform -translate-x-1/2 -top-8 w-16 h-0.5" style={{ background: '#569cd6' }}></div>
-            <h1 className="text-5xl md:text-7xl font-semibold mb-4 animate-slide-up" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
+            <div className="absolute left-1/2 transform -translate-x-1/2 -top-4 sm:-top-8 w-12 sm:w-16 h-0.5" style={{ background: '#569cd6' }}></div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-4 animate-slide-up px-4" style={{ color: '#dcdcaa', fontFamily: "'JetBrains Mono', monospace" }}>
               <span style={{ color: '#569cd6' }}>class</span> <span style={{ color: '#dcdcaa' }}>RohitTripathi</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
             </h1>
-            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-4 w-16 h-0.5" style={{ background: '#569cd6' }}></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-2 sm:-bottom-4 w-12 sm:w-16 h-0.5" style={{ background: '#569cd6' }}></div>
           </div>
-          
-          <div className="text-2xl md:text-4xl font-medium mb-6 animate-slide-up relative inline-block px-8" style={{ fontFamily: "'JetBrains Mono', monospace", color: '#569cd6' }}>
-            <span className="absolute left-0 top-1/2 w-6 h-px" style={{ background: 'rgba(86, 156, 214, 0.3)' }}></span>
-            <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#dcdcaa' }}>SoftwareEngineer</span> <span style={{ color: '#d4d4d4' }}>developer</span> <span style={{ color: '#d4d4d4' }}>;</span>
-            <span className="absolute right-0 top-1/2 w-6 h-px" style={{ background: 'rgba(86, 156, 214, 0.3)' }}></span>
+
+          <div className="text-base sm:text-xl md:text-2xl lg:text-4xl font-medium mb-6 animate-slide-up relative inline-block px-4 sm:px-8" style={{ fontFamily: "'JetBrains Mono', monospace", color: '#569cd6' }}>
+            <span className="hidden sm:inline absolute left-0 top-1/2 w-6 h-px" style={{ background: 'rgba(86, 156, 214, 0.3)' }}></span>
+            <span className="break-words text-center block">
+              <span style={{ color: '#569cd6' }}>public</span> <span style={{ color: '#dcdcaa' }}>SoftwareEngineer</span> <span style={{ color: '#d4d4d4' }}>developer</span> <span style={{ color: '#d4d4d4' }}>;</span>
+            </span>
+            <span className="hidden sm:inline absolute right-0 top-1/2 w-6 h-px" style={{ background: 'rgba(86, 156, 214, 0.3)' }}></span>
           </div>
-          
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-slide-up leading-relaxed" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
+
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-8 animate-slide-up leading-relaxed px-4" style={{ fontWeight: 400, color: '#d4d4d4', fontFamily: "'JetBrains Mono', monospace" }}>
             <span style={{ color: '#6a9955' }}>// </span>
-            <span style={{ color: '#ce9178' }}>"Crafting elegant solutions"</span> <span style={{ color: '#d4d4d4' }}>+</span> <span style={{ color: '#ce9178' }}>" to complex problems"</span> <span style={{ color: '#d4d4d4' }}>;</span><br/>
+            <span style={{ color: '#ce9178' }}>"Crafting elegant solutions"</span> <span style={{ color: '#d4d4d4' }}>+</span> <span style={{ color: '#ce9178' }}>" to complex problems"</span> <span style={{ color: '#d4d4d4' }}>;</span><br />
             <span style={{ color: '#569cd6' }}>build</span><span style={{ color: '#d4d4d4' }}>(</span><span style={{ color: '#9cdcfe' }}>scalableApplications</span><span style={{ color: '#d4d4d4' }}>)</span> <span style={{ color: '#d4d4d4' }}>.</span><span style={{ color: '#dcdcaa' }}>deliver</span><span style={{ color: '#d4d4d4' }}>(</span><span style={{ color: '#ce9178' }}>"exceptional user experiences"</span><span style={{ color: '#d4d4d4' }}>)</span> <span style={{ color: '#d4d4d4' }}>;</span>
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-slide-up">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-8 animate-slide-up px-4">
             <a
               href="#contact"
-              className="btn-3d-primary flex items-center justify-center"
+              className="btn-3d-primary flex items-center justify-center w-full sm:w-auto"
             >
               Get In Touch
             </a>
             <a
               href="#projects"
-              className="btn-3d-secondary flex items-center justify-center"
+              className="btn-3d-secondary flex items-center justify-center w-full sm:w-auto"
             >
               View My Work
             </a>
@@ -76,13 +78,13 @@ const Hero = () => {
               href="https://drive.google.com/uc?export=download&id=18eFPp6ysq9sYv1lhCfLItxpQHLw9k4tM"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-3d-accent flex items-center justify-center gap-2"
+              className="btn-3d-accent flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FaDownload /> Resume
             </a>
           </div>
 
-          <div className="flex justify-center gap-6 animate-slide-up">
+          <div className="flex justify-center gap-4 sm:gap-6 animate-slide-up px-4">
             <a
               href="https://github.com/RohitTripathi1"
               target="_blank"

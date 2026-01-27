@@ -62,13 +62,13 @@ const Skills = () => {
   return (
     <section id="skills" className="section-container">
       <h2 className="section-title">Skills & Technologies</h2>
-      
+
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, catIndex) => (
             <div key={catIndex} className="card">
               <div className="relative mb-6">
-                <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-6 text-center break-words px-2" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
                   <span style={{ color: '#569cd6' }}>Map</span><span style={{ color: '#d4d4d4' }}>{'<'}</span><span style={{ color: '#9cdcfe' }}>String</span><span style={{ color: '#d4d4d4' }}>,</span> <span style={{ color: '#9cdcfe' }}>Integer</span><span style={{ color: '#d4d4d4' }}>{'>'}</span> <span style={{ color: '#dcdcaa' }}>{category.category}</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#569cd6' }}>new</span> <span style={{ color: '#9cdcfe' }}>HashMap</span><span style={{ color: '#d4d4d4' }}>{'<>'}</span><span style={{ color: '#d4d4d4' }}>();</span>
                 </h3>
                 <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-12 h-px" style={{ background: '#569cd6' }}></div>
@@ -76,19 +76,19 @@ const Skills = () => {
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl" style={{ color: '#569cd6' }}>{skill.icon}</span>
-                        <span className="font-semibold" style={{ color: '#dcdcaa' }}>
-                          <span style={{ color: '#dcdcaa' }}>{category.category.toLowerCase()}</span><span style={{ color: '#d4d4d4' }}>.</span><span style={{ color: '#dcdcaa' }}>put</span><span style={{ color: '#d4d4d4' }}>(</span><span style={{ color: '#ce9178' }}>"{skill.name}"</span><span style={{ color: '#d4d4d4' }}>, </span><span style={{ color: '#b5cea8' }}>{skill.level}</span><span style={{ color: '#d4d4d4' }}>);</span>
+                    <div className="flex items-center justify-between mb-2 gap-2">
+                      <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                        <span className="text-xl sm:text-2xl flex-shrink-0" style={{ color: '#569cd6' }}>{skill.icon}</span>
+                        <span className="font-semibold text-xs sm:text-sm md:text-base truncate" style={{ color: '#dcdcaa' }}>
+                          <span className="hidden sm:inline" style={{ color: '#dcdcaa' }}>{category.category.toLowerCase()}</span><span className="hidden sm:inline" style={{ color: '#d4d4d4' }}>.</span><span className="hidden sm:inline" style={{ color: '#dcdcaa' }}>put</span><span className="hidden sm:inline" style={{ color: '#d4d4d4' }}>(</span><span style={{ color: '#ce9178' }}>"{skill.name}"</span><span className="hidden sm:inline" style={{ color: '#d4d4d4' }}>, </span><span className="hidden sm:inline" style={{ color: '#b5cea8' }}>{skill.level}</span><span className="hidden sm:inline" style={{ color: '#d4d4d4' }}>);</span>
                         </span>
                       </div>
-                      <span className="text-sm font-semibold" style={{ color: '#9cdcfe' }}>{skill.level}%</span>
+                      <span className="text-xs sm:text-sm font-semibold flex-shrink-0" style={{ color: '#9cdcfe' }}>{skill.level}%</span>
                     </div>
-                    <div className="w-full rounded-full h-2.5" style={{ background: '#2d2d30' }}>
+                    <div className="w-full rounded-full h-2 sm:h-2.5" style={{ background: '#2d2d30' }}>
                       <div
-                        className="h-2.5 rounded-full transition-all duration-1000"
-                        style={{ 
+                        className="h-2 sm:h-2.5 rounded-full transition-all duration-1000"
+                        style={{
                           width: `${skill.level}%`,
                           background: '#0e639c',
                           boxShadow: '0 0 10px rgba(14, 99, 156, 0.5)'
@@ -104,7 +104,7 @@ const Skills = () => {
 
         <div className="mt-12 card">
           <div className="relative mb-6">
-            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-6 text-center break-words px-2" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
               <span style={{ color: '#569cd6' }}>String[]</span> <span style={{ color: '#dcdcaa' }}>additionalSkills</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
             </h3>
             <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-12 h-px" style={{ background: '#569cd6' }}></div>
@@ -126,11 +126,11 @@ const Skills = () => {
             ].map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 rounded text-sm font-medium transition-colors"
-                style={{ 
-                  background: '#264f78', 
-                  border: '1px solid #3e3e42', 
-                  color: '#9cdcfe' 
+                className="px-3 py-1.5 sm:px-4 sm:py-2 rounded text-xs sm:text-sm font-medium transition-colors break-words"
+                style={{
+                  background: '#264f78',
+                  border: '1px solid #3e3e42',
+                  color: '#9cdcfe'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.borderColor = '#569cd6'

@@ -76,7 +76,7 @@ const Projects = () => {
         {/* Featured Projects */}
         <div className="mb-16">
           <div className="relative mb-8">
-            <h3 className="text-3xl font-semibold mb-8 text-center" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-8 text-center break-words px-2" style={{ color: '#569cd6', fontFamily: "'JetBrains Mono', monospace" }}>
               <span style={{ color: '#569cd6' }}>List</span><span style={{ color: '#d4d4d4' }}>{'<'}</span><span style={{ color: '#9cdcfe' }}>Project</span><span style={{ color: '#d4d4d4' }}>{'>'}</span> <span style={{ color: '#dcdcaa' }}>featuredProjects</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#569cd6' }}>new</span> <span style={{ color: '#9cdcfe' }}>ArrayList</span><span style={{ color: '#d4d4d4' }}>{'<>'}</span><span style={{ color: '#d4d4d4' }}>();</span>
             </h3>
             <div className="absolute left-1/2 transform -translate-x-1/2 bottom-4 w-16 h-px" style={{ background: '#569cd6' }}></div>
@@ -88,15 +88,15 @@ const Projects = () => {
                 className="card group hover:transform hover:scale-105 transition-all duration-300"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                <div className="text-6xl mb-4">{project.image}</div>
-                <h3 className="text-2xl font-semibold mb-3" style={{ color: '#dcdcaa' }}>
+                <div className="text-4xl sm:text-5xl md:text-6xl mb-4">{project.image}</div>
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-3 break-words" style={{ color: '#dcdcaa' }}>
                   <span style={{ color: '#569cd6' }}>Project</span> <span style={{ color: '#dcdcaa' }}>{project.title.replace(/\s+/g, '')}</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#569cd6' }}>new</span> <span style={{ color: '#9cdcfe' }}>Project</span><span style={{ color: '#d4d4d4' }}>();</span>
                 </h3>
-                <p className="mb-4 leading-relaxed" style={{ fontWeight: 400, color: '#d4d4d4' }}>
+                <p className="mb-4 leading-relaxed text-sm sm:text-base" style={{ fontWeight: 400, color: '#d4d4d4' }}>
                   <span style={{ color: '#6a9955' }}>// </span>{project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 text-xs sm:text-sm">
                   <span style={{ color: '#569cd6' }}>String[]</span> <span style={{ color: '#dcdcaa' }}>tech</span> <span style={{ color: '#d4d4d4' }}>=</span> <span style={{ color: '#d4d4d4' }}>{'{'}</span>
                   {project.technologies.map((tech, idx) => (
                     <span
@@ -112,12 +112,12 @@ const Projects = () => {
                   <span style={{ color: '#d4d4d4' }}>{'}'}</span>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 font-semibold transition-colors"
+                    className="flex items-center justify-center sm:justify-start gap-2 font-semibold transition-colors text-sm sm:text-base"
                     style={{ color: '#569cd6' }}
                     onMouseEnter={(e) => e.target.style.color = '#9cdcfe'}
                     onMouseLeave={(e) => e.target.style.color = '#569cd6'}
