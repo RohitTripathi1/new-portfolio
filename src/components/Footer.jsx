@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
+import VisitorCounter from './VisitorCounter'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -18,6 +19,11 @@ const Footer = () => {
               <span style={{ color: '#6a9955' }}>// </span>
               <span style={{ color: '#ce9178' }}>"© {currentYear} All rights reserved."</span>
             </p>
+          </div>
+
+          {/* Visitor Counter */}
+          <div className="mb-4 md:mb-0">
+            <VisitorCounter />
           </div>
 
           <div className="flex gap-4 sm:gap-6">
