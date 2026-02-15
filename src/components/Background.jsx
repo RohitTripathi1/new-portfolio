@@ -34,7 +34,7 @@ const Background = () => {
         <div className="absolute top-20 right-20 w-32 h-32 opacity-3">
           <div className="relative w-full h-full animate-float-3d">
             <div className="absolute inset-0 border transform rotate-45" style={{ borderColor: borderColor, transform: 'rotateX(45deg) rotateY(45deg)', transition: 'border-color 0.3s ease' }}></div>
-            <div className=" inset-0 border transform -rotate-45" style={{ borderColor: borderColor, transform: 'rotateX(-45deg) rotateY(-45deg)', transition: 'border-color 0.3s ease' }}></div>
+            <div className="absolute inset-0 border transform -rotate-45" style={{ borderColor: borderColor, transform: 'rotateX(-45deg) rotateY(-45deg)', transition: 'border-color 0.3s ease' }}></div>
           </div>
         </div>
 
